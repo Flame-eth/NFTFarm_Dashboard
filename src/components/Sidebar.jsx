@@ -31,9 +31,9 @@ const Sidebar = () => {
     >
       {/* logo */}
       <div className="logo">
-        <img src={Logo} alt="logo" />
+        {/* <img src={Logo} alt="logo" /> */}
         <span>
-          Sh<span>o</span>ps
+        YieldNFT Admin Dashboard  
         </span>
       </div>
 
