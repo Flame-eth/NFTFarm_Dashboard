@@ -21,24 +21,27 @@ import img3 from "../imgs/img3.png";
 export const SidebarData = [
   {
     icon: UilEstate,
-    heading: "Dashboard",
+    heading: "Withdrawal",
+    link: "/withdrawal",
   },
   {
     icon: UilClipboardAlt,
-    heading: "Orders",
+    heading: "Stake",
+    link: "/stake",
   },
   {
     icon: UilUsersAlt,
-    heading: "Customers",
+    heading: "Pledge",
+    link: "/pledge",
   },
-  {
-    icon: UilPackage,
-    heading: 'Products'
-  },
-  {
-    icon: UilChart,
-    heading: 'Analytics'
-  },
+  // {
+  //   icon: UilPackage,
+  //   heading: "Products",
+  // },
+  // {
+  //   icon: UilChart,
+  //   heading: "Analytics",
+  // },
 ];
 
 // Analytics Cards Data
