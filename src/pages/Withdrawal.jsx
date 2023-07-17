@@ -5,12 +5,16 @@ import { connect } from "react-redux";
 const Withdrawal = ({ txRecords }) => {
   const records =
     txRecords &&
-    txRecords.filter((record) => record.transaction === "withdrawal");
+    txRecords.filter(
+      (record) =>
+        record.transactionType !== "Stake Allowance" &&
+        record.transactionType !== "New Pledge"
+    );
 
   console.log(records);
   return (
     <div>
-      <Table />
+      <Table transactions={records} />
     </div>
   );
 };

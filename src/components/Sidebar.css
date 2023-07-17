@@ -53,11 +53,11 @@
   cursor: pointer;
 }
 
-.menu .menuItem:last-child {
+/* .menu .menuItem:last-child {
   position: absolute;
   bottom: 2.3rem;
   width: 100%;
-}
+} */
 
 .active {
   background: var(--activeItem);
@@ -82,10 +82,10 @@
 /* Tablets */
 @media screen and (max-width: 1200px) {
   .menuItem > span {
-    display: none;
+    /* display: none; */
   }
   .logo {
-    display: none;
+    /* display: none; */
   }
 }
 

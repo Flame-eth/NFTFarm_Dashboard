@@ -1,12 +1,21 @@
 import React from "react";
 import Table from "../components/Table/Table";
+import { connect } from "react-redux";
 
-const Pledge = () => {
+const Pledge = ({ txRecords }) => {
+  const records =
+    txRecords &&
+    txRecords.filter((record) => record.transactionType === "New Pledge");
+
   return (
     <div>
-      <Table />
+      <Table transactions={records} />
     </div>
   );
 };
 
-export default Pledge;
+const mapStateToProps = (state) => ({
+  txRecords: state.user.txRecords,
+});
+
+export default connect(mapStateToProps)(Pledge);

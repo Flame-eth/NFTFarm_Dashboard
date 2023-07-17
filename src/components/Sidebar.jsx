@@ -42,21 +42,23 @@ const Sidebar = () => {
         <div className="menu">
           {SidebarData.map((item, index) => {
             return (
-              <div
-                className={selected === index ? "menuItem active" : "menuItem"}
-                key={index}
-                onClick={() => setSelected(index)}>
-                <Link to={item.link} className="link">
+              <Link to={item.link} className="link">
+                <div
+                  className={
+                    selected === index ? "menuItem active" : "menuItem"
+                  }
+                  key={index}
+                  onClick={() => setSelected(index)}>
                   <item.icon />
                   <span>{item.heading}</span>
-                </Link>
-              </div>
+                </div>
+              </Link>
             );
           })}
           {/* signoutIcon */}
-          <div className="menuItem">
+          {/* <div className="menuItem">
             <UilSignOutAlt />
-          </div>
+          </div> */}
         </div>
       </motion.div>
     </>
