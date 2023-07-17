@@ -13,10 +13,12 @@ import { setTxRecords } from "./redux/user/user.actions";
 
 function App({ txRecords, setTxRecords }) {
   useEffect(() => {
-    axios.get("http://localhost:3000/api/transactions/all").then((res) => {
-      console.log(res.data.transaction);
-      setTxRecords(res.data.transaction);
-    });
+    axios
+      .get("https://nftfarm-production.up.railway.app/api/transactions/all")
+      .then((res) => {
+        console.log(res.data.transaction);
+        setTxRecords(res.data.transaction);
+      });
   }, []);
   return (
     <div className="App">
