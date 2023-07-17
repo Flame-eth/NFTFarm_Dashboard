@@ -6,8 +6,18 @@ import { Routes, Route } from "react-router-dom";
 import Pledge from "./pages/Pledge";
 import Withdrawal from "./pages/Withdrawal";
 import Stake from "./pages/Stake";
+import { useEffect } from "react";
+import axios from "axios";
+import { connect } from "react-redux";
+import { setTxRecords } from "./redux/user/user.actions";
 
-function App() {
+function App({ txRecords, setTxRecords }) {
+  useEffect(() => {
+    axios.get("http://localhost:3000/api/transactions/all").then((res) => {
+      console.log(res.data.transaction);
+      setTxRecords(res.data.transaction);
+    });
+  }, []);
   return (
     <div className="App">
       <div className="AppGlass">
@@ -25,4 +35,12 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  txRecords: state.user.txRecords,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setTxRecords: (records) => dispatch(setTxRecords(records)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
