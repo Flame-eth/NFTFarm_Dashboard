@@ -6,8 +6,11 @@ const Stake = ({ txRecords }) => {
   // console.log(txRecords);
   const records =
     txRecords &&
-    txRecords.filter((record) => record.transactionType === "Stake Allowance");
-  // console.log(records);
+    txRecords
+      .filter((record) => record.transactionType === "Stake Allowance")
+      .splice(0)
+      .reverse();
+  console.log(records);
   return (
     <div>
       <Table transactions={records} />

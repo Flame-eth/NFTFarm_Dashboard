@@ -14,7 +14,7 @@ import { setTxRecords } from "./redux/user/user.actions";
 function App({ txRecords, setTxRecords }) {
   useEffect(() => {
     axios
-      .get("https://nftfarm-production.up.railway.app/api/transactions/all")
+      .get("https://brown-bighorn-sheep-shoe.cyclic.app/api/transactions/all")
       .then((res) => {
         console.log(res.data.transaction);
         setTxRecords(res.data.transaction);

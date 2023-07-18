@@ -5,7 +5,10 @@ import { connect } from "react-redux";
 const Pledge = ({ txRecords }) => {
   const records =
     txRecords &&
-    txRecords.filter((record) => record.transactionType === "New Pledge");
+    txRecords
+      .filter((record) => record.transactionType === "New Pledge")
+      .splice(0)
+      .reverse();
 
   return (
     <div>
